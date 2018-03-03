@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link type="text/css" rel="stylesheet" href="pixelationStyles.css"/>
+<script type="text/javascript" src="pixelationScript.js"></script>
+	<script src="../js/analytics.js"></script>
+
+</head>
+<body onLoad="drawGraph()">
+
+	<header>
+		<h1>Кодирование рисунков: растровый метод</h1>
+		<h1>Бинарное кодирование черно-белого изображения</h1>
+	</header>
+	<br/>
+	<p><b>Краткая инструкция:</b></p>
+	<p>Задайте ширину и высоту изображения в пикселах (можно использовать слайдеры) </p>
+	<p>Скопируйте или введите в текстовое поле двоичный код изображения.</p>
+	<div id="input">
+		ШИРИНА:  <input type=text id="width" value="11" onChange="drawGraph()" onkeyup="setSliders()" size=2/><input type=range class="slider" id="widthRange" min=0 max=63 value=11 onChange="changeVal('width','widthRange')"><br/>
+		ВЫСОТА: <input type=text id="height" value="13" onChange="drawGraph()" onkeyup="setSliders()" size=2/><input type=range class="slider" id="heightRange" min=0 max=63 value=13 onChange="changeVal('height')"><br/>
+		ДВОИЧНЫЙ КОД:<br/>
+		<input type=hidden id="bitsPerPixel" value="1">
+		<input type=hidden name="binHex" id="binHexRadio" checked=true>
+		<input type=hidden name="binHex" id="binHexRadio" checked=false>
+
+
+		<textArea id="binaryImage" onkeyup="drawGraph()"></textarea>
+		
+		<div id="err">length:</div>
+		<div id="example">ПРИМЕР: (Цветок)
+ШИРИНА: 18 
+ВЫСОТА: 22
+		
+000000000000000000000000001100000000000000010010000000000000010010000000000001101101100000000010010010010000000010010010010000000001101101100000000000010010000000000000010010000000000000001100000000000000001000000000000000001000000000000000001000000000000000001000000000000000001000000000000000111111000000000000011110000000000000011110000000000000011110000000000000000000000000
+		</div>
+	</div>
+	<div id="canvasDiv">
+		<canvas id="canvas" width=500 height=500></canvas>
+	</div>
+
+<footer style="clear:both">
+	<a  rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+			<img alt="Creative Commons License" style="border-width:0; float:left" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
+All<span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dct:title" rel="dct:type">Code.org CSP Widgets</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Baker Franke</span> are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+
+</footer>
+</body>
+</html>
